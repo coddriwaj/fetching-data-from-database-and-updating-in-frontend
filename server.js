@@ -1,3 +1,6 @@
+require('dotenv').config();
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -8,9 +11,8 @@ app.use(express.static('public'));
 app.use(express.json());
 
 main().catch(err => console.log(err));
-
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/signin');
+  await mongoose.connect(process.env.mongourl);
   console.log('MongoDB connected successfully');
 }
 
