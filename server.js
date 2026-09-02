@@ -10,7 +10,7 @@ app.use(express.json());
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://pudasainixyz_db_user:3fY6pEqERavRTArW@cluster0.o77uasb.mongodb.net/');
+  await mongoose.connect('mongodb://localhost:27017/signin');
   console.log('MongoDB connected successfully');
 }
 
