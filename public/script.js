@@ -1,18 +1,17 @@
-document.getElementById('signin').addEventListener('submit', async (e) => {
-  e.preventDefault();
 
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-
-  const response = await fetch('/', {
-    method: 'POST',
+fetchEmails();
+async function fetchEmails() {
+const response = await fetch('/about', {
+    method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password })
   });
+ const emails = await response.json();
+  const list = document.getElementById('email-list');
+  list.innerHTML = '';
 
-  if (response.redirected) {
-    window.location.href = response.url;
-  } else if (!response.ok) {
-    alert('Login failed');
-  }
-});
+  emails.forEach(email => {
+    const li = document.createElement('li');
+    li.textContent = email;
+    list.appendChild();
+  });
+}
