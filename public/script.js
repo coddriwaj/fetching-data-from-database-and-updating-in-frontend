@@ -1,7 +1,7 @@
 
 fetchEmails();
 async function fetchEmails() {
-const response = await fetch('/about', {
+const response = await fetch('/', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });
