@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('Sigin', userSchema);
 
 
-app.get('/', async(req, res) => {
+app.get('/about', async(req, res) => {
   const emails = await User.find({}).distinct('email');
     res.json(emails);
 
