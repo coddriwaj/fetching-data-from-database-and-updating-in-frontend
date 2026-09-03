@@ -12,6 +12,6 @@ const response = await fetch('/about', {
   emails.forEach(email => {
     const li = document.createElement('li');
     li.textContent = email;
-    list.appendChild();
+    list.appendChild(li);
   });
 }
